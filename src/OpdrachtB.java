@@ -29,6 +29,7 @@ public class OpdrachtB extends PApplet {
 
         graphWidth = width - 1000;
         graphHeight = height - 540;
+
         table = loadTable("data.csv", "header");
 
         for (TableRow row : table.rows()) {
