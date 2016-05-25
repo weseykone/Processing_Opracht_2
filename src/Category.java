@@ -1,6 +1,3 @@
-/**
- * Created by bart on 20-5-16.
- */
 class Category {
     int category;
     double x;
