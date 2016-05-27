@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6e752a8c-6cb9-4ef9-9031-0329ce15fcb4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/OpdrachtC.java" afterPath="$PROJECT_DIR$/src/OpdrachtC.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="processing-intellij.iws" />
@@ -513,7 +511,7 @@
       <workItem from="1464117735339" duration="1818000" />
       <workItem from="1464121862100" duration="11000" />
       <workItem from="1464193314249" duration="4171000" />
-      <workItem from="1464349964826" duration="2285000" />
+      <workItem from="1464349964826" duration="2556000" />
     </task>
     <task id="LOCAL-00001" summary="added some functionality for the scatter plot matrix">
       <created>1464102199760</created>
@@ -539,11 +537,17 @@
       <option name="project" value="LOCAL" />
       <updated>1464105812346</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="added some more functionality">
+      <created>1464352527690</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1464352527690</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41784000" />
+    <option name="totallyTimeSpent" value="42055000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -597,7 +601,8 @@
     </option>
     <MESSAGE value="added some functionality for the scatter plot matrix" />
     <MESSAGE value="added the student data for the assignment and formatted the data to csv style so we can use it." />
-    <option name="LAST_COMMIT_MESSAGE" value="added the student data for the assignment and formatted the data to csv style so we can use it." />
+    <MESSAGE value="added some more functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="added some more functionality" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
