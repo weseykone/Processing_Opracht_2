@@ -79,6 +79,16 @@ public class OpdrachtC extends PApplet {
         return compare;
     }
 
+    private double getLowest(double[] scatterData) {
+        double compare = Double.MAX_VALUE;
+        for(double data : scatterData) {
+            if (data < compare)
+                compare = data;
+        }
+
+        return compare;
+    }
+
     /**
      * draw is responsible for drawing the content on the applet
      */
@@ -143,21 +153,24 @@ public class OpdrachtC extends PApplet {
         double maxValueX = getHeighest(xList);
         double maxValueY = getHeighest(yList);
 
+        double minValueX = getLowest(xList);
+        double minValueY = getLowest(yList);
 
         for (int i = 0; i < xList.length; i++) {
             //int[] colorCode = getColor(cat);
             //fill(colorCode[0], colorCode[1], colorCode[2]);
             fill(0,0,255);
-            drawScatters(xList[i], yList[i], new double[]{maxValueX,maxValueY});
+            drawScatters(xList[i], yList[i], new double[] {minValueX, minValueY},new double[]{maxValueX,maxValueY});
         }
 
         fill(0, 0, 0);
         textSize(10);
         text(String.valueOf(maxValueX), (float) graphWidth - 20, (float) graphHeight + 10);
-        text(String.valueOf(maxValueX / 2), (float) graphWidth - 90, (float) graphHeight + 10);
+        text(String.valueOf((maxValueX + minValueX) / 2), (float) graphWidth - 90, (float) graphHeight + 10);
         text(String.valueOf(maxValueY), 15, 40);
-        text(String.valueOf(maxValueY / 2), 15, 90);
-        text("0", 38, (float) graphHeight + 10);
+        text(String.valueOf((maxValueY + minValueY) / 2), 15, 90);
+        text(String.valueOf(minValueX), 38, (float) graphHeight + 10);
+        text(String.valueOf(minValueY), 15, 135);
 
         popMatrix();
     }
@@ -169,8 +182,8 @@ public class OpdrachtC extends PApplet {
      * @param y y-position of the ellipse
      * @param max actual position on the screen
      */
-    public void drawScatters(double x, double y, double[] max) {
-        float[] items = getPositions(x,y, max);
+    public void drawScatters(double x, double y, double[] low,double[] max) {
+        float[] items = getPositions(x,y, low,max);
         ellipse(items[0], items[1], 5, 5);
     }
 
@@ -179,13 +192,13 @@ public class OpdrachtC extends PApplet {
      * getPositions computes the positions on which something needs to be drawn.
      * @param x x-position
      * @param y y-position
-     * @param heights relative to screen positions
+     * @param heighest relative to screen positions
      * @return float[] with the right pixels to draw on
      */
-    public float[] getPositions(double x, double y, double[] heights) {
+    public float[] getPositions(double x, double y, double[] lowest,double[] heighest) {
         return new float[]{
-                map((float) x, 0, (float) heights[0], 40, (float) graphWidth),
-                map((float) y, 0, (float) heights[1], (float) graphHeight, 50)
+                map((float) x, (float) lowest[0], (float) heighest[0], 40, (float) graphWidth),
+                map((float) y, (float) lowest[1], (float) heighest[1], (float) graphHeight, 50)
         };
     }
 }
