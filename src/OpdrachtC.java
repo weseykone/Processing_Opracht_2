@@ -173,6 +173,7 @@ public class OpdrachtC extends PApplet {
         text(String.valueOf(minValueY), 15, 135);
 
         popMatrix();
+        System.out.println("Done");
     }
 
 
